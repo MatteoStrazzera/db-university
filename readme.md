@@ -46,29 +46,27 @@ table name: teachers
 
 - id BIGINT | AI | NOTNULL | UNIQUE | INDEX
 - name NOTNULL | VARCHAR(20)
-- role
-- email
-- contact
+- role | VARCHAR(20)
+- email | VARCHAR(20)
+- contact | CHAR(10)
 
 table name: exams
 
 - id BIGINT | AI | NOTNULL | UNIQUE | INDEX
 - name  NOTNULL | VARCHAR(20)
-- date 
-- exam_location
+- date | DATE
+- exam_location | VARCHAR(30)
 
 table name: students
 
 - id BIGINT | AI | NOTNULL | UNIQUE | INDEX
 - name NOTNULL | VARCHAR(20)
-- photo
-- email
-- year
-- credits
+- email | VARCHAR(20)
+- image | VARCHAR(255)
 
 table name: exam_students
 
 - id BIGINT | AI | NOTNULL | UNIQUE | INDEX
 - id_exams FK | TINYINT | NOTNULL
 - id_students FK | TINYINT | NOTNULL
-- vote 
+- vote | TINYINT

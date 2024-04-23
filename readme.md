@@ -23,26 +23,26 @@ Pensiamo a quali entità (tabelle) creare per il nostro database e cerchiamo poi
 table name: Bicocca_uni
 
 
-table name: dipartimenti
+table name: departments
 
 - id BIGINT | AI | NOTNULL | UNIQUE | INDEX
 - name NOTNULL | VARCHAR(20)
 - description NULL | TEXT
 
-table name: lauree
+table name: degrees
 
 - id BIGINT | AI | NOTNULL | UNIQUE | INDEX
 - name NOTNULL | VARCHAR(50)
 - description NOTNULL | TEXT
 
-table name: corsi
+table name: courses
 
 - id BIGINT | AI | NOTNULL | UNIQUE | INDEX
 - name  NOTNULL | VARCHAR(50)
 - max_students SMALLINT | NOTNULL
-- year YEAR | NOTNULL
+- start_date DATE | NOTNULL
 
-table name: insegnanti
+table name: teachers
 
 - id BIGINT | AI | NOTNULL | UNIQUE | INDEX
 - name NOTNULL | VARCHAR(20)
@@ -50,14 +50,14 @@ table name: insegnanti
 - email
 - contact
 
-table name: esami
+table name: exams
 
 - id BIGINT | AI | NOTNULL | UNIQUE | INDEX
 - name  NOTNULL | VARCHAR(20)
 - date 
 - exam_location
 
-table name: studenti
+table name: students
 
 - id BIGINT | AI | NOTNULL | UNIQUE | INDEX
 - name NOTNULL | VARCHAR(20)
@@ -66,7 +66,9 @@ table name: studenti
 - year
 - credits
 
-table name: voti
+table name: exam_students
 
 - id BIGINT | AI | NOTNULL | UNIQUE | INDEX
+- id_exams FK | TINYINT | NOTNULL
+- id_students FK | TINYINT | NOTNULL
 - vote 

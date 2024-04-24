@@ -27,4 +27,7 @@ Dopo aver testato le vostre query con phpMyAdmin, riportatele in un file query.m
     - Query: SELECT COUNT(*) AS 'total_dep' FROM `departments`;
 
 - Quanti sono gli insegnanti che non hanno un numero di telefono? (50)
-    - Query: SELECT * FROM `teachers` WHERE `phone` IS NULL;
+    <!-- query che restituisce i nomi degli insegnanti senza numero -->
+    - Query: SELECT * FROM `teachers` WHERE `phone` IS NULL; 
+    <!-- query che restituisce il numero totale degli insegnanti senza numero -->
+    - Query: SELECT COUNT(*) AS no_phone_teacher FROM `teachers` WHERE `phone` IS NULL;
